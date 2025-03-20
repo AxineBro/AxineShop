@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axine - Дополнительные данные продавца</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/register.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="index.html" class="logo">
+                <img src="logo/MidleLogoW.png" alt="Логотип Axine">
+            </a>
+            <nav class="categories-nav">
+                <div class="categories-toggle">
+                    <img src="icons/menu.png" alt="Меню категорий" class="menu-icon">
+                    <ul class="category-list">
+                        <li class="category-item">
+                            <a href="#">Электроника</a>
+                            <ul class="subcategories">
+                                <li><a href="#">Смартфоны</a></li>
+                                <li><a href="#">Ноутбуки</a></li>
+                                <li><a href="#">Планшеты</a></li>
+                            </ul>
+                        </li>
+                        <li class="category-item">
+                            <a href="#">Одежда</a>
+                            <ul class="subcategories">
+                                <li><a href="#">Мужская</a></li>
+                                <li><a href="#">Женская</a></li>
+                                <li><a href="#">Детская</a></li>
+                            </ul>
+                        </li>
+                        <li class="category-item"><a href="#">Обувь</a></li>
+                        <li class="category-item"><a href="#">Аксессуары</a></li>
+                        <li class="category-item"><a href="#">Для дома</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Поиск по товарам...">
+            <button>
+                <img src="icons/search.png" alt="Поиск" class="search-icon">
+            </button>
+        </div>
+        <div class="user-actions">
+            <a href="login.html" class="user-action">
+                <img src="icons/user.png" alt="Вход" class="action-icon">
+                <span>Вход</span>
+            </a>
+            <a href="#" class="user-action">
+                <img src="icons/cart.png" alt="Корзина" class="action-icon">
+                <span>Корзина</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="seller-registration">
+            <div class="registration-container">
+                <h2>Дополнительные данные</h2>
+                <p>Пожалуйста, заполните юридическую информацию, чтобы начать продавать.</p>
+                <form id="seller-details-form" action="SellerDetailsServlet" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="inn">ИНН</label>
+                        <input type="text" id="inn" name="inn" placeholder="Введите ИНН" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ogrn">ОГРН</label>
+                        <input type="text" id="ogrn" name="ogrn" placeholder="Введите ОГРН" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="legal-address">Юридический адрес</label>
+                        <input type="text" id="legal-address" name="legalAddress" placeholder="Введите адрес" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ogrn-file">Документ ОГРН (PDF, JPEG, PNG)</label>
+                        <input type="file" id="ogrn-file" name="ogrnFile" accept=".pdf,.jpg,.jpeg,.png" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inn-file">Документ ИНН (PDF, JPEG, PNG)</label>
+                        <input type="file" id="inn-file" name="innFile" accept=".pdf,.jpg,.jpeg,.png" required>
+                    </div>
+                    <button type="submit" class="register-button">Отправить на проверку</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Axine. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="about.html">О нас</a>
+            <a href="contacts.html">Контакты</a>
+            <a href="privacy.html">Политика конфиденциальности</a>
+            <a href="seller-register.html">Стать продавцом</a>
+        </div>
+    </footer>
+
+    <script src="scripts/seller-details.js"></script>
+</body>
+</html>
